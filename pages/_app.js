@@ -1,19 +1,11 @@
 import '../styles/globals.css';
-import Head from 'next/head';
+import { Layout } from '../components';
 
 function MyApp({ Component, pageProps }) {
   return (
-    <>
-      <Head>
-        <title>Next e-commerce</title>
-        <meta
-          name="description"
-          content="Fake e-commerce site made with NextJS, Sanity CMS and Stripe"
-        />
-        <link rel="icon" href="/favicon.ico" />
-      </Head>
+    <Layout>
       <Component {...pageProps} />
-    </>
+    </Layout>
   );
 }
 
