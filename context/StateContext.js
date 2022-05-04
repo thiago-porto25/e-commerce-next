@@ -91,6 +91,9 @@ export const StateContextProvider = ({ children }) => {
         setShowCart,
         toggleCartItemQuantity,
         handleRemoveItem,
+        setCartItems,
+        setTotalPrice,
+        setTotalQuantities,
       }}
     >
       {children}
