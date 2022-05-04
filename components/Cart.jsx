@@ -1,5 +1,4 @@
 /* eslint-disable @next/next/no-img-element */
-import { useRef } from 'react';
 import Link from 'next/link';
 
 import toast from 'react-hot-toast';
@@ -23,10 +22,9 @@ const Cart = () => {
     toggleCartItemQuantity,
     handleRemoveItem,
   } = useStateContext();
-  const cartRef = useRef();
 
   return (
-    <div className="cart-wrapper" ref={cartRef}>
+    <div className="cart-wrapper">
       <div className="cart-container">
         <button
           type="button"

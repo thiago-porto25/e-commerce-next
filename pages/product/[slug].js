@@ -26,7 +26,7 @@ export default function ProductDetails({ product, similarProducts }) {
           <div className="image-container">
             <img
               className="product-detail-image"
-              src={urlFor(product.image[index])}
+              src={product.image && urlFor(product.image[index])}
               alt={product.name}
               loading="eager"
             />
@@ -37,7 +37,7 @@ export default function ProductDetails({ product, similarProducts }) {
                 className={
                   i === index ? 'small-image selected-image' : 'small-image'
                 }
-                key={product._id}
+                key={product._id + i + i}
                 src={urlFor(image)}
                 alt={`${product.name} image ${i + 1}`}
                 loading="lazy"
@@ -91,8 +91,8 @@ export default function ProductDetails({ product, similarProducts }) {
         <h2>You may also like</h2>
         <div className="marquee">
           <div className="maylike-products-container track">
-            {similarProducts?.map((product) => (
-              <Product key={product._id} product={product} />
+            {similarProducts?.map((product, i) => (
+              <Product key={product._id + i} product={product} />
             ))}
           </div>
         </div>
