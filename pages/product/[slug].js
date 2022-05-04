@@ -13,8 +13,13 @@ import { Product } from '../../components';
 import { useStateContext } from '../../context/StateContext';
 
 export default function ProductDetails({ product, similarProducts }) {
-  const { incQty, decQty, qty, addToCart } = useStateContext();
+  const { incQty, decQty, qty, addToCart, setShowCart } = useStateContext();
   const [index, setIndex] = useState(0);
+
+  const handleBuyNow = async () => {
+    addToCart(product, qty);
+    setShowCart(true);
+  };
 
   return (
     <section>
@@ -81,7 +86,7 @@ export default function ProductDetails({ product, similarProducts }) {
             >
               Add to Cart
             </button>
-            <button type="button" className="buy-now">
+            <button type="button" className="buy-now" onClick={handleBuyNow}>
               Buy Now
             </button>
           </div>
